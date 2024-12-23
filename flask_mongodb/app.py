@@ -34,6 +34,8 @@ def all():
     return json_util.dumps(result)
 
 
+#комментарий
+
 @app.route('/find_all/<name>')  # поиск всех элементов в коллекции по ключу
 def find_all(name=None):
     result = collection.find({'name': name})
