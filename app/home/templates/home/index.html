@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
     <h2> Каталог магазина одежды </h2>
-
+ Московское время:  <p class="left-align"> {{ current_time }}</p> <br>
+    Курс доллара: <p class="right-align"> {{ dollar_rate }}</p> <br>
     <h5> В корзине товаров {{ korzina }} </h5>
      <a href="{{ url_for('catalog.catalog') }}" class="btn btn-primary">категории товаров</a>
 

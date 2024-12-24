@@ -53,18 +53,6 @@ app.register_blueprint(tovar_bp)
 app.register_blueprint(catalog_bp)
 
 
-@app.route('/get_course', methods=['GET'])
-def get_course():
-    try:
-        response = requests.get('https://api.exchangerate.host/latest?base=USD&symbols=RUB')
-        data = response.json()
-
-        error_type = data.get('error', {}).get('type')
-        succ = data.get('success')
-        return {'err': error_type, 'succ': succ}
-
-    except requests.exceptions.RequestException as e:
-        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':
